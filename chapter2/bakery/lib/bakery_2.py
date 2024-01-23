@@ -45,9 +45,9 @@ class Order():
                 print("The size is correct. Order Satisfied")
                 sleep(3)
                 completed += 1
-                print(f"You have #:{completed} orders left before opening time!")
+                print(f"You have #:{5 - completed} orders left before opening time!")
                 sleep(3)
-                if completed > 5:
+                if completed > 4:
                     complete()
                 else:
                     order = run_order()
