@@ -138,13 +138,14 @@ file.
 
 ### Getting Started
 
-1. [Start recording](../../pills/screen_recordings.md) 🎥
-2. Open up `program/lib/password_validator.py` and read the instructions
-3. Navigate to the `program` directory in your terminal and run `pipenv run
-   pytest -x`
-4. Work in small steps to complete the `is_valid()` method.
-5. Run `pipenv run pytest -x` regularly to check your progress.
-6. Keep going until all the tests pass
+1. [Start recording.](../../pills/screen_recordings.md) 🎥
+2. Open up `program/lib/password_validator.py` and read the instructions.
+3. Navigate to the `program` directory in your terminal and run `pipenv install` 
+to install dependencies.
+4. Run `pipenv run pytest -x` to show you the first failing test.
+5. Work in small steps to complete the `is_valid()` method.
+6. Run `pipenv run pytest -x` regularly to check your progress.
+7. Keep going until all the tests pass.
 
 If you get stuck, consult the [Breaking Down
 Problems](../../pills/breaking_down_problems.md) guide.

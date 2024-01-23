@@ -37,7 +37,7 @@ class Order():
             return "Carrot"
 
     def satisfy_order(self, cake):
-        global completed
+        global completed, order
         if cake.flavour == self.flavour:
             print("The flavour is correct!")
             sleep(3)
@@ -49,7 +49,9 @@ class Order():
                 sleep(3)
                 if completed > 5:
                     complete()
-                order = run_order()
+                else:
+                    order = run_order()
+                    return order
 
         else:
             print("That isn't right!")
