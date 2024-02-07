@@ -16,7 +16,7 @@
 #   Returns: False
 def starts_with_the_letter_a(string):
     # your code goes here (delete the pass below)
-    pass
+    return string[0].lower() == 'a'
 
 
 # Purpose: checks if a string ends with the letter a
@@ -29,7 +29,7 @@ def starts_with_the_letter_a(string):
 #   Returns: False
 def ends_with_the_letter_a(string):
     # your code goes here (delete the pass below)
-    pass
+    return string[-1].lower() == 'a'
 
 
 # Purpose: checks if a string contains the word hello
@@ -42,7 +42,7 @@ def ends_with_the_letter_a(string):
 #   Returns: False
 def contains_hello(string):
     # your code goes here (delete the pass below)
-    pass
+    return 'hello' in string.lower()
 
 
 # Purpose: replaces the word hello with the word goodbye
@@ -55,7 +55,7 @@ def contains_hello(string):
 #   Returns: "Hello folks"
 def substitute_hello_with_goodbye(string):
     # your code goes here (delete the pass below)
-    pass
+    return string.replace('hello', 'goodbye')
 
 
 # Purpose: removes the letter x from a string
@@ -66,7 +66,7 @@ def substitute_hello_with_goodbye(string):
 #   Returns: "OO"
 def remove_x(string):
     # your code goes here (delete the pass below)
-    pass
+    return string.replace('x', '').replace('X', '')
 
 
 # Purpose: returns the first half of a string
@@ -76,7 +76,7 @@ def remove_x(string):
 # Note: you can assume the string will always have an even number of characters
 def first_half(string):
     # your code goes here (delete the pass below)
-    pass
+    return string[0:int(len(string) / 2)]
 
 
 # Purpose: returns the second half of a string
@@ -86,7 +86,7 @@ def first_half(string):
 # Note: you can assume the string will always have an even number of characters
 def second_half(string):
     # your code goes here (delete the pass below)
-    pass
+    return string[int(len(string) / 2):]
 
 
 # Congrats, you're done with this file. Move on to the next one.
