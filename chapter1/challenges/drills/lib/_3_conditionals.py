@@ -17,7 +17,8 @@
 #   Returns: 8
 def fizz_buzz(number):
     # your code goes here (delete the pass below)
-    pass
+    return "fizzbuzz" if number % 15 == 0 else "fizz" if number % 3 == 0 else "buzz" if number % 5 == 0 else number
+
 
 
 # Purpose: responds to the user's greeting
@@ -36,7 +37,7 @@ def fizz_buzz(number):
 #   Returns: "how are you?"
 def reply_to(greeting):
     # your code goes here (delete the pass below)
-    pass
+    return greeting + " to you too" if greeting == 'good morning' else "hi" if greeting == 'hello' else greeting
 
 # Purpose: deducts 10 from a number if it is greater than or equal to 10,
 #          otherwise returns the number
@@ -49,7 +50,7 @@ def reply_to(greeting):
 #   Returns: 9
 def deduct_10_if_possible(number):
     # your code goes here (delete the pass below)
-    pass
+    return number - 10 if number >= 10 else number
 
 
 # Purpose: if the number is below 100, return 100, otherwise return the number
@@ -62,7 +63,7 @@ def deduct_10_if_possible(number):
 #   Returns: 125
 def top_up_to_100(number):
     # your code goes here (delete the pass below)
-    pass
+    return 100 if number < 100 else number
 
 
 # Congrats, you're done with this file. Move on to the next one.
