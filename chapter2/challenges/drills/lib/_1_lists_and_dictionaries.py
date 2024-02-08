@@ -22,6 +22,8 @@
 # Example:
 #   Call:    first_element([1, 2, 3])
 #   Returns: 1
+def first_element(one_list):
+    return one_list[0]
 
 
 
@@ -31,7 +33,8 @@
 # Example:
 #   Call:    second_element([1, 2, 3])
 #   Returns: 2
-
+def second_element(one_list):
+    return one_list[1]
 
 
 # Method name: last_element
@@ -40,6 +43,8 @@
 # Example:
 #   Call:    last_element([1, 2, 3])
 #   Returns: 3
+def last_element(one_list):
+    return one_list[-1]
 
 
 
@@ -49,6 +54,8 @@
 # Example:
 #   Call:    first_two_elements([1, 2, 3])
 #   Returns: [1, 2]
+def first_two_elements(one_list):
+    return one_list[0:2]
 
 
 
@@ -58,6 +65,8 @@
 # Example:
 #   Call:    first_three_elements([1, 2, 3, 4])
 #   Returns: [1, 2, 3]
+def first_three_elements(one_list):
+    return one_list[0:3]
 
 
 
@@ -67,6 +76,8 @@
 # Example:
 #   Call:    total([1, 2, 3])
 #   Returns: 6
+def total(one_list):
+    return sum(one_list)
 
 
 
@@ -76,7 +87,8 @@
 # Example:
 #   Call:    lowest_number([4, 2, 6])
 #   Returns: 2
-
+def lowest_number(one_list):
+    return sorted(one_list)[0]
 
 
 # Method name: highest_number
@@ -85,6 +97,8 @@
 # Example:
 #   Call:    highest_number([4, 6, 2])
 #   Returns: 6
+def highest_number(one_list):
+    return sorted(one_list)[-1]
 
 
 
@@ -94,6 +108,8 @@
 # Example:
 #   Call:    the_beatles()
 #   Returns: ['john', 'paul', 'george', 'ringo']
+def the_beatles():
+    return ['john', 'paul', 'george', 'ringo']
 
 
 
@@ -103,6 +119,10 @@
 # Example:
 #   Call:    i_joined_the_beatles('yoko')
 #   Returns: ['john', 'paul', 'george', 'ringo', 'yoko']
+def i_joined_the_beatles(name):
+    names = ['john', 'paul', 'george', 'ringo']
+    names.append(name)
+    return names
 
 
 
@@ -112,7 +132,9 @@
 # Example:
 #   Call:    we_joined_the_beatles(['yoko', 'stuart'])
 #   Returns: ['john', 'paul', 'george', 'ringo', 'yoko', 'stuart']
-
+def we_joined_the_beatles(one_list):
+    names = ['john', 'paul', 'george', 'ringo']
+    return names + one_list
 
 
 # Method name: remove_nones_from_list
@@ -121,6 +143,10 @@
 # Example:
 #   Call:    remove_nones_from_list([1, None, 2, None, 3])
 #   Returns: [1, 2, 3]
+def remove_nones_from_list(one_list):
+    while None in one_list:
+        one_list.remove(None)
+    return one_list
 
 
 
@@ -130,6 +156,8 @@
 # Example:
 #   Call:    double_list([1, 2, 3])
 #   Returns: [1, 2, 3, 1, 2, 3]
+def double_list(one_list):
+    return one_list + one_list
 
 
 
@@ -139,6 +167,8 @@
 # Example:
 #   Call:    unique_elements([1, 2, 1, 3, 2, 3])
 #   Returns: [1, 2, 3]
+def unique_elements(one_list):
+    return list(set(one_list))
 
 
 
@@ -148,6 +178,9 @@
 # Example:
 #   Call:    add_to_list(["a", "b", "c"], "d")
 #   Returns: ["a", "b", "c", "d"]
+def add_to_list(one_list, element):
+    one_list.append(element)
+    return one_list
 
 
 
@@ -160,6 +193,9 @@
 # Example:
 #   Call:    new_band_member({"bass": "flea"})
 #   Returns: {"vocalist": "miss piggy", "lead_guitar": "scooter", "bass": "flea"}
+def new_band_member(dictionary):
+    dictionary.update({"vocalist": "miss piggy", "lead_guitar": "scooter"})
+    return dictionary
 
 
 
@@ -169,6 +205,8 @@
 # Example:
 #   Call:    all_values({"a": 1, "b": 2, "c": 3})
 #   Returns: [1, 2, 3]
+def all_values(dictionary):
+    return dictionary.values()
 
 
 
@@ -178,6 +216,8 @@
 # Example:
 #   Call:    all_keys({"a": 1, "b": 2, "c": 3})
 #   Returns: ["a", "b", "c"]
+def all_keys(dictionary):
+    return dictionary.keys()
 
 
 
@@ -187,7 +227,9 @@
 # Example:
 #   Call:    remove_nones_from_dictionary({"a": 1, "b": None, "c": 3})
 #   Returns: {"a": 1, "c": 3}
-
+def remove_nones_from_dictionary(dictionary):
+    filtered_dict = dict((key, value) for key, value in dictionary.items() if value is not None)
+    return filtered_dict
 
 
 
@@ -197,4 +239,5 @@
 # Example:
 #   Call:    touch_in('Aldgate East', '2022/01/30 17:12')
 #   Returns: {'entrypoint': 'Aldgate East', 'time': '2022/01/30 17:12'}
-
+def touch_in(station, date):
+    return {"entrypoint": station, "time": date}
