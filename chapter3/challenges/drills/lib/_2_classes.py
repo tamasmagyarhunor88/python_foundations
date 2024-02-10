@@ -63,8 +63,21 @@
 #   'Good night, Bobby!'
 #   > greeter.good_morning('Bobby')
 #   'Good morning, Bobby!'
+class Greeter():
+    def __init__(self) -> None:
+        pass
 
-
+    def hello(self, name):
+        return f"Hello, {name}!"
+    
+    def goodbye(self, name):
+        return f"Goodbye, {name}!"
+    
+    def good_night(self, name):
+        return f"Good night, {name}!"
+    
+    def good_morning(self, name):
+        return f"Good morning, {name}!"
 
 # Class name: Basket
 # Purpose: store a list of items
@@ -84,8 +97,15 @@
 #   > basket.add('orange')
 #   > basket.list_items()
 #   ['apple', 'banana', 'orange']
+class Basket():
+    def __init__(self) -> None:
+        self.storage = []
 
+    def add(self, item):
+        self.storage.append(item)
 
+    def list_items(self):
+        return self.storage
 
 # Class name: Calculator
 # Purpose: perform simple calculations and track the history
@@ -119,7 +139,28 @@
 #   0.875
 #   > calculator.list_history()
 #   [3, 12, -1, 0.875]
+class Calculator():
+    def __init__(self) -> None:
+        self.history = []
 
+    def add(self, num1, num2):
+        self.history.append(num1 + num2)
+        return num1 + num2
+    
+    def multiply(self, num1, num2):
+        self.history.append(num1 * num2)
+        return num1 * num2
+    
+    def subtract(self, num1, num2):
+        self.history.append(num1 - num2)
+        return num1 - num2
+    
+    def divide(self, num1, num2):
+        self.history.append(num1 / num2)
+        return num1 / num2
+    
+    def list_history(self):
+        return self.history
 
 
 # Class name: Cohort
@@ -145,7 +186,18 @@
 #   [{'name' : 'Jo', 'employer' : 'NASA'}, {'name' : 'Alex', 'employer' : 'NASA'}, {'name' : 'Bobby', 'employer' : 'Google'}]
 #   > cohort.list_employed_by('NASA')
 #   [{'name' : 'Jo', 'employer' : 'NASA'}, {'name' : 'Alex', 'employer' : 'NASA'}]
+class Cohort():
+    def __init__(self) -> None:
+        self.students = []
 
+    def add_student(self, student):
+        self.students.append(student)
+
+    def list_students(self):
+        return self.students
+    
+    def list_employed_by(self, employer):
+        return list(filter(lambda item: item['employer'] == employer, self.students))
 
 
 # Class name: Person
@@ -163,7 +215,7 @@
 #      Arguments: none
 #      Returns: a nice summary of the person's pets
 # Example usage:
-#   > person = Person({
+# person = Person({
 #       'name' : 'Alex',
 #       'pets' : [
 #         {'name' : 'Arthur', 'animal' : 'cat'},
@@ -181,5 +233,18 @@
 #   '10 South Street'
 #   > person.get_pets()
 #   'Alex has 3 pets: a cat called Arthur, a dog called Judith, a goldfish called Gwen'
+class Person():
+    def __init__(self, details):
+        self.details = details
 
-
+    def get_work_address(self):
+        return self.details['addresses'][0].get('building') + " " + self.details['addresses'][0].get('street')
+    
+    def get_home_address(self):
+        return self.details['addresses'][1].get('building') + " " + self.details['addresses'][1].get('street')
+    
+    def get_pets(self):
+        string = f"{self.details['name']} has {len(self.details['pets'])} pets: "
+        for dictionary in self.details['pets']:
+            string += f"a {dictionary['animal']} called {dictionary['name']}, "
+        return string[:string.rfind(',')]

@@ -195,7 +195,11 @@ def all_below(one_list, number):
 # Example:
 #   Call:    multiply_each_by([9, 3, 6, 44, 1, 7, 7], 2)
 #   Returns: [18, 6, 12, 88, 2, 14, 14]
-
+def multiply_each_by(one_list, number):
+    new_list = []
+    for num in one_list:
+        new_list.append(num * number)
+    return new_list
 
 
 # == DICTIONARY EXERCISES ==
@@ -206,7 +210,8 @@ def all_below(one_list, number):
 # Example:
 #   Call:    values_summed({'cat': 4, 'person': 2, 'centipede': 100})
 #   Returns: 106
-
+def values_summed(dictionary):
+    return sum(dictionary.values())
 
 
 # Method name: add_key_value_pair
@@ -215,6 +220,9 @@ def all_below(one_list, number):
 # Example:
 #   Call:    add_key_value_pair({'cat': 4, 'person': 2, 'centipede': 100}, 'dog', 4)
 #   Returns: {'cat': 4, 'person': 2, 'centipede': 100, 'dog': 4}
+def add_key_value_pair(dictionary, key, value):
+    dictionary[key] = value
+    return dictionary
 
 
 
@@ -224,7 +232,9 @@ def all_below(one_list, number):
 # Example:
 #   Call:    remove_key_value_pair({'cat': 4, 'person': 2, 'centipede': 100}, 'cat')
 #   Returns: {'person': 2, 'centipede': 100}
-
+def remove_key_value_pair(dictionary, key):
+    del dictionary[key]
+    return dictionary
 
 
 # Method name: where_value_below
@@ -233,7 +243,8 @@ def all_below(one_list, number):
 # Example:
 #   Call:    where_value_below({'cat': 4, 'person': 2, 'centipede': 100}, 5)
 #   Returns: {'cat': 4, 'person': 2}
-
+def where_value_below(dictionary, number):
+    return dict(filter(lambda item: item[1] < number, dictionary.items()))
 
 
 # Method name: where_key_starts_with
@@ -242,5 +253,6 @@ def all_below(one_list, number):
 # Example:
 #   Call:    where_key_starts_with({'cat': 4, 'person': 2, 'centipede': 100}, 'c')
 #   Returns: {'cat': 4, 'centipede': 100}
-
+def where_key_starts_with(dictionary, letter):
+    return dict(filter(lambda item: item[0][0] == letter, dictionary.items() ))
 
