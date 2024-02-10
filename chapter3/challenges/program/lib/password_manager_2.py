@@ -73,7 +73,7 @@ class PasswordManager2():
         self.passwords = {}
 
     def add(self, service, password):
-        if self.is_long_enough(password) and self.is_spec_char_in_password(password):
+        if self.is_overall_a_valid_password(password):
             self.passwords[service] = password
 
     def list_services(self):
@@ -87,3 +87,21 @@ class PasswordManager2():
         if any(char in password for char in spec_characters):
             return True
         return False
+    
+    def is_password_unique(self, password):
+        if password in self.passwords.values():
+            return False
+        return True
+    
+    def remove(self, service):
+        del self.passwords[service]
+
+    def update(self, service, password):
+        if self.is_overall_a_valid_password(password):
+            self.passwords.update({service: password})
+
+    def get_for_service(self, service):
+        return self.passwords.get(service)
+    
+    def is_overall_a_valid_password(self, password):
+        return self.is_long_enough(password) and self.is_spec_char_in_password(password) and self.is_password_unique(password)
