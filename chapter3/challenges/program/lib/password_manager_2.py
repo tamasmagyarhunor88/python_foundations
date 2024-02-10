@@ -69,4 +69,21 @@
 
 from datetime import datetime
 class PasswordManager2():
-    pass
+    def __init__(self) -> None:
+        self.passwords = {}
+
+    def add(self, service, password):
+        if self.is_long_enough(password) and self.is_spec_char_in_password(password):
+            self.passwords[service] = password
+
+    def list_services(self):
+        return list(self.passwords.keys())
+    
+    def is_long_enough(self, password):
+        return len(password) > 7
+    
+    def is_spec_char_in_password(self, password):
+        spec_characters = ['!', '@', '$', '%', '&']
+        if any(char in password for char in spec_characters):
+            return True
+        return False
