@@ -105,3 +105,13 @@ class PasswordManager2():
     
     def is_overall_a_valid_password(self, password):
         return self.is_long_enough(password) and self.is_spec_char_in_password(password) and self.is_password_unique(password)
+    
+    def sort_services_by(self, sort_by, order='alphabetical'):
+        if sort_by == 'service' and order == 'reverse':
+            return sorted(self.passwords.keys())[::-1]
+        if sort_by == 'added_on' and order == 'reverse':
+            return list(self.passwords.keys())[::-1]
+        if sort_by == 'added_on':
+            return list(self.passwords.keys())
+        else:
+            return sorted(self.passwords.keys())
